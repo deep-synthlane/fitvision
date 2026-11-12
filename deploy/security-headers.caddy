@@ -1,0 +1,11 @@
+# Security headers for the web app (imported by the Caddyfile; also used by the E2E CSP check).
+# MediaPipe (body scan / photo checks) loads its WASM from jsdelivr and its model from Google storage.
+header {
+	Strict-Transport-Security "max-age=31536000; includeSubDomains"
+	X-Content-Type-Options "nosniff"
+	Referrer-Policy "no-referrer"
+	X-Frame-Options "DENY"
+	Permissions-Policy "camera=(self), microphone=(), geolocation=(), payment=()"
+	Content-Security-Policy "default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; connect-src 'self' https://cdn.jsdelivr.net https://storage.googleapis.com; img-src 'self' blob: data:; media-src 'self' blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+	-Server
+}

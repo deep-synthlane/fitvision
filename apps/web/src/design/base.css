@@ -1,0 +1,262 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--fv-color-bg);
+  color: var(--fv-color-text);
+  font-family: var(--fv-font-sans);
+  font-size: var(--fv-text-md);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--fv-color-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--fv-color-focus);
+  outline-offset: 2px;
+}
+
+.fv-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Button ---------- */
+.fv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--fv-space-2);
+  min-height: 44px;
+  padding: 0 var(--fv-space-5);
+  border: 1px solid transparent;
+  border-radius: var(--fv-radius-md);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--fv-transition), border-color var(--fv-transition);
+}
+.fv-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.fv-btn--primary {
+  background: var(--fv-color-primary);
+  color: var(--fv-color-on-primary);
+}
+.fv-btn--primary:hover:not(:disabled) {
+  background: var(--fv-color-primary-hover);
+}
+.fv-btn--secondary {
+  background: var(--fv-color-surface);
+  border-color: var(--fv-color-border);
+  color: var(--fv-color-text);
+}
+.fv-btn--secondary:hover:not(:disabled) {
+  background: var(--fv-color-surface-2);
+}
+.fv-btn--ghost {
+  background: transparent;
+  color: var(--fv-color-text-muted);
+}
+.fv-btn--ghost:hover:not(:disabled) {
+  color: var(--fv-color-text);
+  background: var(--fv-color-surface-2);
+}
+.fv-btn--block {
+  width: 100%;
+}
+
+/* ---------- Form fields ---------- */
+.fv-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fv-space-1);
+}
+.fv-field__label {
+  font-size: var(--fv-text-sm);
+  font-weight: 600;
+}
+.fv-field__hint {
+  font-size: var(--fv-text-xs);
+  color: var(--fv-color-text-muted);
+}
+.fv-field__error {
+  font-size: var(--fv-text-sm);
+  color: var(--fv-color-danger);
+}
+.fv-input {
+  min-height: 44px;
+  padding: 0 var(--fv-space-3);
+  border: 1px solid var(--fv-color-border);
+  border-radius: var(--fv-radius-md);
+  background: var(--fv-color-surface);
+  color: var(--fv-color-text);
+  font: inherit;
+  width: 100%;
+}
+.fv-input[aria-invalid='true'] {
+  border-color: var(--fv-color-danger);
+}
+
+/* ---------- Choice cards (radio group) ---------- */
+.fv-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--fv-space-2);
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.fv-choices legend {
+  font-size: var(--fv-text-sm);
+  font-weight: 600;
+  margin-bottom: var(--fv-space-2);
+  padding: 0;
+}
+.fv-choice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: var(--fv-space-3) var(--fv-space-4);
+  border: 1px solid var(--fv-color-border);
+  border-radius: var(--fv-radius-md);
+  background: var(--fv-color-surface);
+  cursor: pointer;
+  font-weight: 500;
+}
+.fv-choice input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.fv-choice:has(input:checked) {
+  border-color: var(--fv-color-primary);
+  background: var(--fv-color-primary-soft);
+}
+.fv-choice:has(input:focus-visible) {
+  outline: 2px solid var(--fv-color-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- Card ---------- */
+.fv-card {
+  background: var(--fv-color-surface);
+  border: 1px solid var(--fv-color-border);
+  border-radius: var(--fv-radius-lg);
+  box-shadow: var(--fv-shadow-sm);
+  padding: var(--fv-space-5);
+}
+
+/* ---------- Alert ---------- */
+.fv-alert {
+  padding: var(--fv-space-3) var(--fv-space-4);
+  border-radius: var(--fv-radius-md);
+  font-size: var(--fv-text-sm);
+}
+.fv-alert--error {
+  background: var(--fv-color-danger-soft);
+  color: var(--fv-color-danger);
+}
+.fv-alert--info {
+  background: var(--fv-color-primary-soft);
+  color: var(--fv-color-text);
+}
+.fv-alert--warning {
+  background: var(--fv-color-warning-soft);
+  color: var(--fv-color-warning);
+}
+
+/* ---------- Badge ---------- */
+.fv-badge {
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+  padding: 2px var(--fv-space-2);
+  border-radius: var(--fv-radius-full);
+  font-size: var(--fv-text-xs);
+  font-weight: 600;
+  background: var(--fv-color-surface-2);
+  color: var(--fv-color-text-muted);
+}
+.fv-badge--mock {
+  background: var(--fv-color-warning-soft);
+  color: var(--fv-color-warning);
+}
+
+/* ---------- Progress steps ---------- */
+.fv-steps {
+  display: flex;
+  gap: var(--fv-space-2);
+}
+.fv-steps__bar {
+  flex: 1;
+  height: 4px;
+  border-radius: var(--fv-radius-full);
+  background: var(--fv-color-surface-2);
+}
+.fv-steps__bar--done {
+  background: var(--fv-color-primary);
+}
+
+.fv-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fv-space-4);
+}
+.fv-row {
+  display: flex;
+  gap: var(--fv-space-3);
+  flex-wrap: wrap;
+}
+.fv-row > * {
+  flex: 1 1 160px;
+}
+.fv-muted {
+  color: var(--fv-color-text-muted);
+}
+
+/* ---------- Fieldset / compound inputs ---------- */
+.fv-fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.fv-fieldset legend {
+  padding: 0;
+  margin-bottom: var(--fv-space-1);
+}
+.fv-inline-inputs {
+  display: flex;
+  gap: var(--fv-space-2);
+}
+.fv-inline-input {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--fv-space-2);
+  color: var(--fv-color-text-muted);
+  font-size: var(--fv-text-sm);
+}

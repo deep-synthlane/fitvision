@@ -1,0 +1,69 @@
+/* FitVision design tokens. Feature code should only use these variables, never raw colors. */
+:root {
+  color-scheme: light dark;
+
+  --fv-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fv-text-xs: 0.75rem;
+  --fv-text-sm: 0.875rem;
+  --fv-text-md: 1rem;
+  --fv-text-lg: 1.125rem;
+  --fv-text-xl: 1.5rem;
+  --fv-text-2xl: 2rem;
+
+  --fv-space-1: 4px;
+  --fv-space-2: 8px;
+  --fv-space-3: 12px;
+  --fv-space-4: 16px;
+  --fv-space-5: 24px;
+  --fv-space-6: 32px;
+  --fv-space-7: 48px;
+
+  --fv-radius-sm: 6px;
+  --fv-radius-md: 10px;
+  --fv-radius-lg: 16px;
+  --fv-radius-full: 999px;
+
+  --fv-color-bg: #f6f7f9;
+  --fv-color-surface: #ffffff;
+  --fv-color-surface-2: #eef1f4;
+  --fv-color-border: #d9dee4;
+  --fv-color-text: #111827;
+  --fv-color-text-muted: #5b6573;
+  --fv-color-primary: #0f766e;
+  --fv-color-primary-hover: #0d645d;
+  --fv-color-primary-soft: #ccfbf1;
+  --fv-color-on-primary: #ffffff;
+  --fv-color-danger: #b91c1c;
+  --fv-color-danger-soft: #fee2e2;
+  /* Background for white text (destructive buttons); AA in both themes. */
+  --fv-color-danger-solid: #b91c1c;
+  --fv-color-warning: #92400e;
+  --fv-color-warning-soft: #fef3c7;
+  --fv-color-success: #15803d;
+  --fv-color-focus: #2563eb;
+
+  --fv-shadow-sm: 0 1px 2px rgb(16 24 40 / 0.06), 0 1px 3px rgb(16 24 40 / 0.1);
+  --fv-transition: 150ms ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fv-color-bg: #0b0f14;
+    --fv-color-surface: #131a22;
+    --fv-color-surface-2: #1b2430;
+    --fv-color-border: #2a3542;
+    --fv-color-text: #e6edf3;
+    --fv-color-text-muted: #98a4b3;
+    --fv-color-primary: #2dd4bf;
+    --fv-color-primary-hover: #5eead4;
+    --fv-color-primary-soft: #123c38;
+    --fv-color-on-primary: #04201d;
+    --fv-color-danger: #f87171;
+    --fv-color-danger-soft: #3b1515;
+    --fv-color-warning: #fbbf24;
+    --fv-color-warning-soft: #3a2a08;
+    --fv-color-success: #4ade80;
+    --fv-color-focus: #60a5fa;
+    --fv-shadow-sm: none;
+  }
+}

@@ -1,0 +1,23 @@
+node_modules
+dist
+.data
+coverage
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+
+# Calibration volunteer data (pseudonymous, never committed)
+tools/calibration/data/*
+!tools/calibration/data/.gitkeep
+
+# VTON evaluation inputs and outputs (consented test photos, never committed)
+tools/vton-eval/data/*
+!tools/vton-eval/data/.gitkeep
+tools/vton-eval/runs/*
+!tools/vton-eval/runs/.gitkeep
+
+# Playwright
+apps/e2e/test-results
+apps/e2e/playwright-report

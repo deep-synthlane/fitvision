@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "avatars_one_active_per_user" ON "avatars" USING btree ("user_id") WHERE "avatars"."status" in ('pending', 'processing');

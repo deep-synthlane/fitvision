@@ -1,0 +1,121 @@
+.fv-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: var(--fv-space-3);
+}
+.fv-photo-option {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fv-space-1);
+  padding: var(--fv-space-2);
+  border: 1px solid var(--fv-color-border);
+  border-radius: var(--fv-radius-md);
+}
+.fv-photo-option label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fv-space-1);
+  cursor: pointer;
+}
+.fv-photo-option input {
+  position: absolute;
+  opacity: 0;
+}
+.fv-photo-option:has(input:focus-visible) {
+  outline: 2px solid var(--fv-color-focus);
+  outline-offset: 2px;
+}
+.fv-photo-option:has(input:disabled) img {
+  opacity: 0.5;
+}
+.fv-photo-option--selected {
+  border-color: var(--fv-color-primary);
+  box-shadow: 0 0 0 2px var(--fv-color-primary-soft);
+}
+.fv-photo-option img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--fv-radius-sm);
+  background: var(--fv-color-surface-2);
+}
+.fv-candidate {
+  max-height: 420px;
+  max-width: 100%;
+  align-self: center;
+  border-radius: var(--fv-radius-md);
+}
+.fv-tryon-camera {
+  aspect-ratio: 3 / 4;
+  max-height: 60vh;
+}
+.fv-consent {
+  align-items: flex-start;
+  font-size: var(--fv-text-sm);
+}
+.fv-consent input {
+  margin-top: 3px;
+}
+.fv-result,
+.fv-compare {
+  display: grid;
+  gap: var(--fv-space-3);
+  justify-items: center;
+}
+.fv-compare {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.fv-result figure,
+.fv-compare figure {
+  margin: 0;
+  display: grid;
+  gap: var(--fv-space-1);
+  justify-items: center;
+}
+.fv-result img {
+  max-height: 70vh;
+  max-width: 100%;
+  border-radius: var(--fv-radius-md);
+}
+.fv-compare img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: var(--fv-radius-md);
+  background: var(--fv-color-surface-2);
+}
+.fv-result figcaption,
+.fv-compare figcaption {
+  font-size: var(--fv-text-sm);
+  color: var(--fv-color-text-muted);
+}
+
+/* Inputs summary next to "Generate try-on": person input + garment → result. */
+.fv-tryon-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--fv-space-3);
+}
+.fv-tryon-inputs figure {
+  margin: 0;
+  display: grid;
+  gap: var(--fv-space-1);
+  justify-items: center;
+}
+.fv-tryon-inputs img {
+  width: 88px;
+  height: 116px;
+  object-fit: contain;
+  background: var(--fv-color-bg);
+  border: 1px solid var(--fv-color-border);
+  border-radius: var(--fv-radius-sm);
+}
+.fv-tryon-inputs figcaption {
+  font-size: var(--fv-text-sm);
+  color: var(--fv-color-text-muted);
+}
+.fv-tryon-inputs > span {
+  font-size: 1.5rem;
+  color: var(--fv-color-text-muted);
+}

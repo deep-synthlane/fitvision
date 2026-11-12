@@ -1,0 +1,179 @@
+.fv-textarea {
+  min-height: 88px;
+  padding: var(--fv-space-2) var(--fv-space-3);
+  resize: vertical;
+}
+.fv-tabs {
+  display: flex;
+  gap: var(--fv-space-1);
+  border-bottom: 1px solid var(--fv-color-border);
+}
+.fv-tabs button {
+  padding: var(--fv-space-3) var(--fv-space-4);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--fv-color-text-muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fv-tabs button[aria-selected='true'] {
+  color: var(--fv-color-primary);
+  border-bottom-color: var(--fv-color-primary);
+}
+.fv-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--fv-space-3);
+}
+.fv-image-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--fv-color-border);
+  border-radius: var(--fv-radius-md);
+  overflow: hidden;
+  background: var(--fv-color-surface);
+}
+.fv-image-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: var(--fv-color-surface-2);
+}
+.fv-image-card--excluded img {
+  opacity: 0.35;
+}
+.fv-image-card--tryon {
+  border-color: var(--fv-color-primary);
+  box-shadow: 0 0 0 2px var(--fv-color-primary-soft);
+}
+.fv-image-card__controls {
+  display: grid;
+  gap: var(--fv-space-1);
+  padding: var(--fv-space-2);
+  font-size: var(--fv-text-sm);
+}
+.fv-inline-check {
+  display: flex;
+  align-items: center;
+  gap: var(--fv-space-1);
+}
+.fv-input--sm {
+  min-height: 32px;
+  font-size: var(--fv-text-sm);
+}
+.fv-btn--sm {
+  min-height: 32px;
+  padding: 0 var(--fv-space-3);
+  font-size: var(--fv-text-sm);
+}
+.fv-table-scroll {
+  overflow-x: auto;
+  /* Containing block for visually-hidden (absolute) labels in the table, so they're clipped too
+     instead of widening the page. */
+  position: relative;
+}
+.fv-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: var(--fv-text-sm);
+}
+.fv-table th,
+.fv-table td {
+  padding: var(--fv-space-2) var(--fv-space-3);
+  border-bottom: 1px solid var(--fv-color-border);
+  text-align: left;
+  white-space: nowrap;
+}
+.fv-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--fv-space-3);
+}
+.fv-product-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fv-space-2);
+  padding: var(--fv-space-3);
+}
+.fv-product-card img,
+.fv-product-card__noimg {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  border-radius: var(--fv-radius-sm);
+  background: var(--fv-color-surface-2);
+}
+.fv-product-card h3 {
+  font-size: var(--fv-text-md);
+}
+.fv-product-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--fv-space-1);
+}
+.fv-product-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--fv-space-1);
+  margin-top: auto;
+}
+.fv-product-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--fv-space-4);
+  align-items: start;
+}
+.fv-product-detail__main img {
+  width: 100%;
+  border-radius: var(--fv-radius-md);
+  background: var(--fv-color-surface-2);
+}
+.fv-thumb-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--fv-space-2);
+}
+.fv-thumb-row button {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: var(--fv-radius-sm);
+  background: none;
+  cursor: pointer;
+}
+.fv-thumb-row button[aria-pressed='true'] {
+  border-color: var(--fv-color-primary);
+}
+.fv-thumb-row img {
+  width: 64px;
+  height: 80px;
+  object-fit: contain;
+  background: var(--fv-color-surface-2);
+  border-radius: var(--fv-radius-sm);
+}
+.fv-kv {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--fv-space-2) var(--fv-space-4);
+  margin: 0;
+}
+.fv-kv dt {
+  color: var(--fv-color-text-muted);
+}
+.fv-kv dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 760px) {
+  .fv-product-detail {
+    grid-template-columns: 1fr;
+  }
+}
+.fv-plain-list {
+  margin: 0;
+  padding-left: var(--fv-space-4);
+}
+.fv-break {
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,9 @@
+{
+  "$comment": "Copy to data/manifest.json. Paths are relative to the manifest. Use photos you have consent to process with third-party services.",
+  "cases": [
+    { "id": "c01-tee-front", "person": "people/p01-front.jpg", "garment": "garments/tee-white.png", "region": "upper_body", "description": "white cotton t-shirt", "notes": "plain garment, good light" },
+    { "id": "c02-logo-tee", "person": "people/p01-front.jpg", "garment": "garments/tee-logo.png", "region": "upper_body", "description": "black t-shirt with chest logo", "notes": "logo preservation" },
+    { "id": "c03-jeans", "person": "people/p02-front.jpg", "garment": "garments/jeans.png", "region": "lower_body", "description": "blue slim jeans", "notes": "lower-body placement" },
+    { "id": "c04-dress", "person": "people/p03-front.jpg", "garment": "garments/dress-floral.png", "region": "full_body", "description": "floral midi dress", "notes": "pattern + silhouette" }
+  ]
+}

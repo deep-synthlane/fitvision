@@ -1,0 +1,43 @@
+{
+  "name": "@fitvision/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=.env src/server.ts",
+    "start": "tsx --env-file-if-exists=.env src/server.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "db:generate": "drizzle-kit generate",
+    "worker": "tsx --env-file-if-exists=.env src/worker.ts",
+    "migrate": "tsx --env-file-if-exists=.env src/migrate.ts",
+    "build": "esbuild src/server.ts src/worker.ts src/migrate.ts --bundle --platform=node --format=esm --target=node22 --outdir=dist --packages=external --alias:@fitvision/shared=../../packages/shared/src/index.ts --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\"",
+    "seed": "tsx --env-file-if-exists=.env src/seed.ts",
+    "export-feedback": "tsx --env-file-if-exists=.env src/exportFeedback.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.1156.0",
+    "@electric-sql/pglite": "^0.3.0",
+    "@fastify/cookie": "^11.0.0",
+    "@fastify/cors": "^11.0.0",
+    "@fastify/multipart": "^10.1.7",
+    "@fastify/rate-limit": "^10.0.0",
+    "@fitvision/shared": "workspace:*",
+    "bcryptjs": "^3.0.0",
+    "cheerio": "^1.2.0",
+    "drizzle-orm": "^0.45.0",
+    "fastify": "^5.0.0",
+    "ipaddr.js": "^2.5.0",
+    "jose": "^6.0.0",
+    "pg": "^8.13.0",
+    "sharp": "^0.34.5",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.11.0",
+    "drizzle-kit": "^0.31.0",
+    "esbuild": "0.28.2",
+    "tsx": "^4.20.0"
+  }
+}

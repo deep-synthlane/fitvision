@@ -1,0 +1,23 @@
+{
+  "name": "@fitvision/vton-eval",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "run-eval": "tsx --env-file-if-exists=.env src/run.ts",
+    "summarize": "tsx src/summarize.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "avatar-build": "tsx src/avatar/build.ts",
+    "avatar-sheet": "tsx --env-file-if-exists=.env src/avatar/sheet.ts",
+    "avatar-summary": "tsx src/avatar/summary.ts"
+  },
+  "dependencies": {
+    "@fitvision/shared": "workspace:*",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0"
+  }
+}

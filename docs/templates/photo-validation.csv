@@ -1,0 +1,2 @@
+photo_code,consent_recorded,session_date,source,device,browser,lighting,background,people_in_photo,pose,framing,clothing,expected_suitable,expected_issues,checker_verdict,checker_issues,person_height_fraction,analysis_ms,reviewer,notes
+EXAMPLE-01,yes,2026-11-10,camera,Pixel 8,Chrome 141,good indoor,plain wall,1,front,full body,fitted,yes,,suitable,,0.82,2400,AB,"Example row only — delete before use"

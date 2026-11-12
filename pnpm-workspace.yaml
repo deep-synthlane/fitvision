@@ -1,0 +1,9 @@
+packages:
+  - packages/*
+  - apps/*
+  - tools/*
+
+allowBuilds:
+  esbuild: true
+  # sharp ships prebuilt binaries; its install script only builds from source as a fallback.
+  sharp: false

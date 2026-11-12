@@ -1,0 +1,78 @@
+.fv-avatar-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--fv-space-3);
+  align-items: start;
+}
+.fv-avatar-stage {
+  height: min(70vh, 560px);
+  border-radius: var(--fv-radius-md);
+  background: radial-gradient(circle at 50% 35%, var(--fv-color-surface), var(--fv-color-surface-2));
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.fv-avatar-viewer {
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+.fv-avatar-viewer:active {
+  cursor: grabbing;
+}
+.fv-avatar-fallback {
+  height: 95%;
+  max-width: 100%;
+}
+.fv-param-list {
+  display: grid;
+  gap: var(--fv-space-2);
+  margin: 0;
+}
+.fv-param-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--fv-space-3);
+  border-bottom: 1px solid var(--fv-color-border);
+  padding-bottom: var(--fv-space-2);
+}
+.fv-param-list dt {
+  color: var(--fv-color-text-muted);
+}
+.fv-param-list dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+.fv-actions--start {
+  justify-content: flex-start;
+}
+.fv-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--fv-color-border);
+  border-top-color: var(--fv-color-primary);
+  border-radius: 50%;
+  vertical-align: -2px;
+  animation: fv-spin 0.8s linear infinite;
+}
+@keyframes fv-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fv-spinner {
+    animation: none;
+  }
+}
+@media (max-width: 760px) {
+  .fv-avatar-layout {
+    grid-template-columns: 1fr;
+  }
+  .fv-avatar-stage {
+    height: 60vh;
+  }
+}

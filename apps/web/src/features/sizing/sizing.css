@@ -1,0 +1,21 @@
+.fv-size-headline {
+  margin: 0;
+  font-size: var(--fv-text-lg);
+}
+.fv-size-headline strong {
+  font-size: var(--fv-text-xl);
+}
+.fv-size-note {
+  white-space: normal !important;
+  min-width: 220px;
+  color: var(--fv-color-text-muted);
+}
+.fv-size-conf--high {
+  background: var(--fv-color-primary-soft);
+  color: var(--fv-color-text);
+}
+.fv-size-conf--low,
+.fv-size-conf--none {
+  background: var(--fv-color-warning-soft);
+  color: var(--fv-color-warning);
+}
